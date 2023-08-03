@@ -76,6 +76,7 @@ const BodyContainer = styled.div`
     flex-direction: column;
   }
 `;
+
 const ImageContainer = styled.div`
   @media (width <= 600px) {
     order: 1;
@@ -83,10 +84,10 @@ const ImageContainer = styled.div`
     justify-content: center;
     border-bottom: 1px solid var(--gray);
     margin: 10px 30px 30px;
-  }
-  img {
-    width: 177px;
-    height: 222px;
+    img {
+      width: 177px;
+      height: 222px;
+    }
   }
 `;
 

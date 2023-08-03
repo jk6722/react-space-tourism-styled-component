@@ -114,8 +114,8 @@ const TextBox = styled.div`
 
 const ImageBox = styled.img`
   padding: 50px;
-  width: 50%;
-  height: 50%;
+  width: 300px;
+  height: 300px;
   margin: auto;
 `;
 

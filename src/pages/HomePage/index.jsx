@@ -53,7 +53,7 @@ const Container = styled(PageContainer)`
 `;
 
 const HomeText = styled.div`
-  margin-top: 20%;
+  margin-top: 10%;
   padding: 40px;
   @media (width <= 600px) {
     text-align: center;
@@ -90,6 +90,8 @@ const Btn = styled.div`
   font-size: 32px;
   font-family: "Bellefair", sans-serif;
   letter-spacing: 2px;
+  margin: auto;
+
   @media (width <= 600px) {
     position: absolute;
     width: 150px;

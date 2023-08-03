@@ -55,11 +55,9 @@ const HeaderBox = styled.div`
   position: fixed;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   z-index: 1;
   margin-left: 30px;
   width: 100%;
-  max-width: 1280px;
 `;
 
 const ImageBox = styled.div`
@@ -90,7 +88,7 @@ const NavBar = styled.div`
 `;
 
 const LineBox = styled.div`
-  width: 30%;
+  width: 30vw;
   margin-left: 10em;
   z-index: 2;
   position: absolute;
