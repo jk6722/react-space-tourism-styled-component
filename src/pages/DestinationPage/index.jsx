@@ -68,14 +68,29 @@ const DestinationPage = () => {
 export default DestinationPage;
 
 const Container = styled(PageContainer)`
-  background-image: url("/assets/destination/background-destination-desktop.jpg");
-  display: flex;
-  flex-direction: column;
+  @media (900px <= width) {
+    background-image: url("/assets/destination/background-destination-desktop.jpg");
+    display: flex;
+    flex-direction: column;
+  }
+  @media (600px <= width <= 900px) {
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
+  }
+  @media (width <= 600px) {
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
+    display: flex;
+    flex-direction: column;
+    height: 140%;
+  }
 `;
 
 const BodyContainer = styled.div`
   display: flex;
   padding: 60px;
+  @media (width <= 600px) {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 const BodyParagraph__modified = styled(BodyParagraph)`
@@ -83,28 +98,47 @@ const BodyParagraph__modified = styled(BodyParagraph)`
   color: var(--primary);
   padding-bottom: 40px;
   border-bottom: 0.5px solid var(--gray);
+  @media (width <= 600px) {
+    padding-bottom: 20px;
+    margin: auto;
+  }
 `;
 
 const TextBox = styled.div`
   margin-left: 60px;
+  @media (width <= 600px) {
+    margin: 0;
+    text-align: center;
+  }
 `;
 
 const ImageBox = styled.img`
   padding: 50px;
+  width: 50%;
+  height: 50%;
+  margin: auto;
 `;
 
 const FilterBar = styled.div`
   display: flex;
   height: 20px;
+  @media (width <= 600px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const InfoContainer = styled.div`
   display: flex;
   padding: 20px 0;
+  @media (width <= 600px) {
+    flex-direction: column;
+  }
 `;
 
 const InfoBox = styled.div`
   margin-right: 20px;
+  width: 100%;
 `;
 const InfoTitle = styled(Sub2)`
   padding: 10px 0;

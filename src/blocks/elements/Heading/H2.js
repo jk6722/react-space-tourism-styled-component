@@ -5,6 +5,9 @@ const H2 = styled.h2`
   color: var(--white);
   font-size: 100px;
   padding: 30px 0;
+  @media (width <= 600px) {
+    font-size: 56px;
+  }
 `;
 
 export default H2;

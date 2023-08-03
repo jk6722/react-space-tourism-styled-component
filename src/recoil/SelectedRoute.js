@@ -9,3 +9,8 @@ export const SelectedDestination = atom({
   key: "SelectedDestination",
   default: "MOON",
 });
+
+export const ModalOpened = atom({
+  key: "ModalOpened",
+  default: false,
+});

@@ -32,6 +32,9 @@ const FilterItem = styled.span`
   color: var(--primary);
   margin-right: 15px;
   cursor: pointer;
+  @media (width <= 600px) {
+    margin: 0 5px;
+  }
 `;
 
 const FilterItem__active = styled.span`
@@ -43,4 +46,7 @@ const FilterItem__active = styled.span`
   color: var(--white);
   margin-right: 15px;
   cursor: pointer;
+  @media (width <= 600px) {
+    margin: 0 5px;
+  }
 `;

@@ -3,13 +3,14 @@ import H5 from "../../blocks/elements/Heading/H5";
 import H1 from "../../blocks/elements/Heading/H1";
 import BodyParagraph from "../../blocks/elements/BodyParagraph/BodyParagraph";
 import data from "../../../data.json";
-import { useSetRecoilState } from "recoil";
-import { SelectedRouter } from "../../recoil/SelectedRoute";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { ModalOpened, SelectedRouter } from "../../recoil/SelectedRoute";
 import { useNavigate } from "react-router-dom";
 import PageContainer from "../../blocks/PageContainer/PageContainer";
 
 const HomePage = () => {
   const { subtitle, title, description } = data["home"];
+  const isModalOpen = useRecoilValue(ModalOpened);
   const setSelected = useSetRecoilState(SelectedRouter);
 
   const navigate = useNavigate();
@@ -38,25 +39,44 @@ const HomePage = () => {
 export default HomePage;
 
 const Container = styled(PageContainer)`
-  background-image: url("/assets/home/background-home-desktop.jpg");
+  @media (900px <= width) {
+    background-image: url("/assets/home/background-home-desktop.jpg");
+  }
+  @media (600px <= width <= 900px) {
+    background-image: url("/assets/home/background-home-tablet.jpg");
+  }
+  @media (width <= 600px) {
+    background-image: url("/assets/home/background-home-mobile.jpg");
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const HomeText = styled.div`
   margin-top: 20%;
   padding: 40px;
+  @media (width <= 600px) {
+    text-align: center;
+  }
 `;
 
 const BodyParagraphBox = styled.div`
   width: 60%;
+  @media (width <= 600px) {
+    width: 80%;
+    margin: auto;
+  }
 `;
 
 const BtnBox = styled.div`
   padding: 30px;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column-reverse;
   align-items: baseline;
-  /* margin-right: 50px; */
+  @media (width <= 600px) {
+    padding: 0;
+    align-items: center;
+  }
 `;
 const Btn = styled.div`
   width: 274px;
@@ -70,6 +90,14 @@ const Btn = styled.div`
   font-size: 32px;
   font-family: "Bellefair", sans-serif;
   letter-spacing: 2px;
+  @media (width <= 600px) {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    font-size: 20px;
+    margin-bottom: 0;
+    bottom: 50px;
+  }
   &:hover {
     outline: 30px solid var(--gray);
     transition: 0.5s linear;

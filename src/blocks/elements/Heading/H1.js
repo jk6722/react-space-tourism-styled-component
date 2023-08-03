@@ -5,6 +5,9 @@ const H1 = styled.h1`
   font-size: 150px;
   color: var(--white);
   padding: 20px 0;
+  @media (width <= 600px) {
+    font-size: 80px;
+  }
 `;
 
 export default H1;

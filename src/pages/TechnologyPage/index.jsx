@@ -44,7 +44,16 @@ const TechnologyPage = () => {
             </BodyParagraph__modified>
           </TextContainer>
           <ImageContainer>
-            <img src={selectedTechData.images.portrait} alt="technology" />
+            <img
+              src={selectedTechData.images.portrait.slice(1)}
+              alt="technology"
+              className="portrait"
+            />
+            <img
+              src={selectedTechData.images.landscape.slice(1)}
+              alt="technology"
+              className="landscape"
+            />
           </ImageContainer>
         </BodyContainer>
       )}
@@ -58,23 +67,59 @@ const Container = styled(PageContainer)`
   background-image: url("/assets/technology/background-technology-desktop.jpg");
   display: flex;
   flex-direction: column;
+  /* @media (width <= 600px) {
+    height: 140%;
+  } */
 `;
 
 const BodyContainer = styled.div`
   display: flex;
   margin: 80px 0;
+  @media (width <= 600px) {
+    flex-direction: column;
+    margin: 40px 0;
+  }
 `;
 
-const BtnContainer = styled.div``;
+const BtnContainer = styled.div`
+  @media (width <= 600px) {
+    display: flex;
+    justify-content: center;
+    order: 2;
+    margin: 10px 0;
+  }
+`;
 
 const TextContainer = styled.div`
   padding: 0 40px;
+  @media (width <= 600px) {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    order: 3;
+  }
 `;
 
 const ImageContainer = styled.div`
-  position: absolute;
-  right: 0;
-  top: 200px;
+  @media (width <= 600px) {
+    .portrait {
+      display: none;
+    }
+    .landscape {
+      position: relative;
+      width: 100%;
+    }
+    order: 1;
+  }
+  @media (600px <= width) {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    flex-direction: column;
+    .landscape {
+      display: none;
+    }
+  }
 `;
 
 const Btn = styled.div`
@@ -88,6 +133,12 @@ const Btn = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  @media (width <= 600px) {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 10px;
+  }
 `;
 
 const Btn__active = styled.div`
@@ -101,6 +152,12 @@ const Btn__active = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  @media (width <= 600px) {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 10px;
+  }
 `;
 
 const H3__modified = styled(H3)`
@@ -115,4 +172,8 @@ const Subtitle = styled.div`
 
 const BodyParagraph__modified = styled(BodyParagraph)`
   width: 45%;
+  @media (width <= 600px) {
+    margin: auto;
+    width: 85%;
+  }
 `;

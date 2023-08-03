@@ -6,8 +6,10 @@ const PageContainer = styled.div`
   height: 100vh;
   background-size: cover;
   max-width: 1280px;
-  max-height: 800px;
   padding: 200px 100px 80px;
+  @media (width <= 600px) {
+    padding: 0;
+  }
   display: flex;
 `;
 
